@@ -56,6 +56,7 @@ If you need to authenticate via bearer auth (e.g., for a cross-origin request), 
 All API requests must be made over HTTPS. Calls made over plain HTTP will fail. API requests without authentication will also fail.
 
 # Answers
+
 ```shell
 curl https://api.stripe.com/v1/answers/search \
   -u your_grepper_api_key_here: \
@@ -118,7 +119,7 @@ This endpoint searches all answers based on a query.
 Parameter | Required | Default | Description
 --------- | -------- | ------- | -----------
 query | true | false | query to search through answer titles ex: "Javascript loop array backwords"
-similarity | false | 50 | How similar the query has to be to the answer title. 1-100 where 1 is really loose matching and 100 is really strict/tight match.
+similarity | false | 60 | How similar the query has to be to the answer title. 1-100 where 1 is really loose matching and 100 is really strict/tight match.
 
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
