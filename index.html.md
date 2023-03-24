@@ -57,8 +57,9 @@ All API requests must be made over HTTPS. Calls made over plain HTTP will fail. 
 
 # Answers
 
+## Search All Answers
 ```shell
-curl https://api.stripe.com/v1/answers/search \
+curl https://api.grepper.com/v1/answers/search \
   -u your_grepper_api_key_here: \
   --data-urlencode query="javascript loop array backwords" \
   -G
@@ -102,8 +103,6 @@ $grepper->answers->search([
   ]
 }
 ```
-
-## Search All Answers
 
 This endpoint searches all answers based on a query.
 
