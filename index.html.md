@@ -56,16 +56,6 @@ If you need to authenticate via bearer auth (e.g., for a cross-origin request), 
 All API requests must be made over HTTPS. Calls made over plain HTTP will fail. API requests without authentication will also fail.
 
 # Answers
-
-## Search All Answers
-
-This endpoint searches all answers based on a query.
-
-### HTTP Request
-
-`GET https://api.grepper.com/v1/answers/search`
-
-
 ```shell
 curl https://api.stripe.com/v1/answers/search \
   -u your_grepper_api_key_here: \
@@ -111,6 +101,17 @@ $grepper->answers->search([
   ]
 }
 ```
+
+## Search All Answers
+
+This endpoint searches all answers based on a query.
+
+### HTTP Request
+
+`GET https://api.grepper.com/v1/answers/search`
+
+
+
 
 ### Query Parameters
 
