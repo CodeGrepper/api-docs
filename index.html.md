@@ -39,7 +39,7 @@ To get a feel for how this API works see the example to the right.
 > Here is an example of doing a grepper search through the api:
 
 ```shell
-curl https://api.stripe.com/v1/answers/search \
+curl https://api.grepper.com/v1/answers/search \
   -u your_grepper_api_key_here: \
   --data-urlencode query="javascript loop array backwords" \
   -G
@@ -59,6 +59,13 @@ All API requests must be made over HTTPS. Calls made over plain HTTP will fail. 
 
 ## Search All Answers
 
+This endpoint searches all answers based on a query.
+
+### HTTP Request
+
+`GET https://api.grepper.com/v1/answers/search`
+
+
 ```shell
 curl https://api.stripe.com/v1/answers/search \
   -u your_grepper_api_key_here: \
@@ -73,11 +80,6 @@ $grepper = new \Grepper\GrepperClient(
 $grepper->answers->search([
   'query' => 'javascript loop array backwords',
 ]);
-```
-
-```shell
-curl "http://example.com/api/kittens" \
-  -H "Authorization: meowmeowmeow"
 ```
 
 > Response:
@@ -110,18 +112,12 @@ curl "http://example.com/api/kittens" \
 }
 ```
 
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
 ### Query Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+Parameter | Required | Default | Description
+--------- | -------- | ------- | -----------
+query | true | false | query to search through answer titles ex: "Javascript loop array backwords"
+similarity | false | 50 | How similar the query has to be to the answer title. 1-100 where 1 is really loose matching and 100 is really strict/tight match.
 
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
