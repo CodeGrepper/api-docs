@@ -31,6 +31,21 @@ We have language bindings in Shell, Ruby, Python, and JavaScript! You can view c
 
 This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation.
 
+Welcome to the Grepper API!  Grepper allows you to quickly search, add and edit code snippets & technical answers to all those little coding problems you run into every day (It’s Basically stackoverflow, but tightly integrated into your workflow… and without the overzealous moderators…). 
+
+This API is a work in progress and we are calling on all community members to help build it out. Specifically we need language bindings/client libraries for [Javascript, Python, Java, Go, .NET, Node, Ruby]. We also want feature requests from the community, so we can unlock all the value of Grepper through this API.
+
+To get started here is a quick example of using the api key. Note: You will need a [grepper account](https://grepper.com), after creating an account you can find your [api key here](https://grepper.com/app/settings-account.php)
+
+Here is an example of doing a grepper search through the api:
+```shell
+curl https://api.stripe.com/v1/customers/search \
+  -u your_grepper_api_key_here: \
+  --data-urlencode query="javascript loop array backwords" \
+  -G
+```
+
+
 # Authentication
 
 > To authorize, use this code:
