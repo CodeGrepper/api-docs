@@ -31,7 +31,7 @@ This API is a work in progress and we are calling on all community members to he
 
 To get started here is a quick example of using the api key. Note: You will need a [grepper account](https://grepper.com), after creating an account you can find your [api key here](https://grepper.com/app/settings-account.php)
 
-Here is an example of doing a grepper search through the api:
+> Here is an example of doing a grepper search through the api
 
 ```shell
 curl https://api.stripe.com/v1/customers/search \
