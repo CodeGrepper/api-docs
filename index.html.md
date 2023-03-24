@@ -125,59 +125,50 @@ similarity | false | 60 | How similar the query has to be to the answer title. 1
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 
-## Get a Specific Kitten
+## Retreive an Answer
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
 
 ```shell
-curl "http://example.com/api/kittens/2" \
-  -H "Authorization: meowmeowmeow"
+curl https://api.grepper.com/v1/answers/560676 \
+  -u your_api_key_here:
 ```
 
-```javascript
-const kittn = require('kittn');
+```php
+$grepper = new \Grepper\GrepperClient(
+  'your_api_key_here'
+);
 
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
+$answer=$stripe->answers->retrieve(560676);
 ```
 
-> The above command returns JSON structured like this:
+> Response:
 
 ```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
+    {
+      "id": 560676,
+      "content": "let arr = [1, 2, 3];\n\narr.slice().reverse().forEach(x => console.log(x))\n Run code snippetHide results",
+      "author_name": "Homely Hyena",
+      "author_profile_url": "https://www.grepper.com/profile/homely-hyena-qrcy8ksj0gew",
+      "title": "javascript loop through array backwords",
+      "upvotes": 0,
+      "object": "answer",
+      "downvotes": 0
+    }
 ```
 
-This endpoint retrieves a specific kitten.
+This endpoint retrieves a specific answer.
 
 <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`GET https://api.grepper.com/v1/answers/:id`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the kitten to retrieve
+id | The answer id of the answer to retrieve
 
 ## Delete a Specific Kitten
 
