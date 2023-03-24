@@ -58,6 +58,7 @@ All API requests must be made over HTTPS. Calls made over plain HTTP will fail. 
 # Answers
 
 ## Search All Answers
+
 ```shell
 curl https://api.grepper.com/v1/answers/search \
   -u your_grepper_api_key_here: \
