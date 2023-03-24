@@ -39,7 +39,7 @@ To get a feel for how this API works see the example to the right.
 > Here is an example of doing a grepper search through the api:
 
 ```shell
-curl https://api.stripe.com/v1/customers/search \
+curl https://api.stripe.com/v1/answers/search \
   -u your_grepper_api_key_here: \
   --data-urlencode query="javascript loop array backwords" \
   -G
