@@ -29,7 +29,7 @@ Welcome to the Grepper API!  Grepper allows you to quickly search, add and edit 
 
 This API is a work in progress and we are calling on all community members to help build it out. Specifically we need language bindings/client libraries for [Javascript, Python, Java, Go, .NET, Node, Ruby]. We also want feature requests from the community, so we can unlock all the value of Grepper through this API.
 
-To get started here is a quick example of using the api key. Note: You will need a [grepper account](https://grepper.com), after creating an account you can find your [api key here](https://grepper.com/app/settings-account.php)
+To get started here is a quick example of using the api key. Note: You will need a [grepper account](https://www.grepper.com), after creating an account you can find your [api key here](https://www.grepper.com/app/settings-account.php)
 
 
 <aside class="notice">
@@ -47,61 +47,32 @@ curl https://api.stripe.com/v1/answers/search \
 
 
 # Authentication
+The Grepper API uses API keys to authenticate requests. You can view and manage your API key in your [Grepper Account Settings](https://www.grepper.com/app/settings-account.php).
 
-> To authorize, use this code:
+Authentication to the API is performed via HTTP Basic Auth. Provide your API key as the basic auth username value. You do not need to provide a password.
 
-```ruby
-require 'kittn'
+If you need to authenticate via bearer auth (e.g., for a cross-origin request), use -H "Authorization: Bearer youapikeyhere" instead of -u youapikeyhere.
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
+All API requests must be made over HTTPS. Calls made over plain HTTP will fail. API requests without authentication will also fail.
 
-```python
-import kittn
+# Answers
 
-api = kittn.authorize('meowmeowmeow')
-```
+## Search All Answers
 
 ```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here" \
-  -H "Authorization: meowmeowmeow"
+curl https://api.stripe.com/v1/answers/search \
+  -u your_grepper_api_key_here: \
+  --data-urlencode query="javascript loop array backwords" \
+  -G
 ```
 
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-
-# Kittens
-
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
+```php
+$grepper = new \Grepper\GrepperClient(
+  'your_api_key_here'
+);
+$grepper->answers->search([
+  'query' => 'javascript loop array backwords',
+]);
 ```
 
 ```shell
@@ -109,32 +80,34 @@ curl "http://example.com/api/kittens" \
   -H "Authorization: meowmeowmeow"
 ```
 
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> The above command returns JSON structured like this:
+> Response:
 
 ```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
+{
+  "object": "list",
+  "data": [
+    {
+      "id": 560676,
+      "content": "let arr = [1, 2, 3];\n\narr.slice().reverse().forEach(x => console.log(x))\n Run code snippetHide results",
+      "author_name": "Homely Hyena",
+      "author_profile_url": "https://www.grepper.com/profile/homely-hyena-qrcy8ksj0gew",
+      "title": "javascript loop through array backwords",
+      "upvotes": 0,
+      "object": "answer",
+      "downvotes": 0
+    },
+    {
+      "id": 504956,
+      "content": "var arr=[1,2,3];\narr.reverse().forEach(x=> console.log(x))",
+      "author_name": "Yanislav Ivanov",
+      "author_profile_url": "https://www.grepper.com/profile/yanislav-ivanov-r2lfrl14s6xy",
+      "title": "js loop array back",
+      "upvotes": 2,
+      "object": "answer",
+      "downvotes": 2
+    }
+  ]
+}
 ```
 
 This endpoint retrieves all kittens.
