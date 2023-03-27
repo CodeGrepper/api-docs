@@ -120,7 +120,7 @@ query | true | false | query to search through answer titles ex: "Javascript loo
 similarity | false | 60 | How similar the query has to be to the answer title. 1-100 where 1 is really loose matching and 100 is really strict/tight match.
 
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+Remember — You'll need to swap out your_grepper_api_key_here for you api key.
 </aside>
 
 ## Retreive an Answer
@@ -156,7 +156,7 @@ $answer=$stripe->answers->retrieve(560676);
 
 This endpoint retrieves a specific answer.
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+<aside class="warning">This endpoint is in progress and not yet available.</aside>
 
 ### HTTP Request
 
@@ -168,16 +168,9 @@ Parameter | Description
 --------- | -----------
 id | The answer id of the answer to retrieve
 
-## Delete a Specific Kitten
+## Update a specific answer
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
+```php
 import kittn
 
 api = kittn.authorize('meowmeowmeow')
@@ -185,16 +178,19 @@ api.kittens.delete(2)
 ```
 
 ```shell
-curl "http://example.com/api/kittens/2" \
-  -X DELETE \
-  -H "Authorization: meowmeowmeow"
+curl https://api.grepper.com/v1/answers/560676 \
+  -u your_api_key_here: \
+  -d "answer[content]"="new answer content here"
 ```
 
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
+```php
+$grepper = new \Grepper\GrepperClient(
+  'your_api_key_here'
+);
+$grepper->answers->update(
+  '560676',
+  ['answer' => ['content' => 'new answer content here']]
+);
 ```
 
 > The above command returns JSON structured like this:
@@ -202,19 +198,19 @@ let max = api.kittens.delete(2);
 ```json
 {
   "id": 2,
-  "deleted" : ":("
+  "success" : "true"
 }
 ```
 
-This endpoint deletes a specific kitten.
+This endpoint updates a specific answer.
 
 ### HTTP Request
 
-`DELETE http://example.com/kittens/<ID>`
+`POST https://api.grepper.com/v1/answers/:id`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the kitten to delete
+id | The answer id of the answer to update
 
