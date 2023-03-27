@@ -27,7 +27,17 @@ Welcome to the Grepper API!  Grepper allows you to quickly search, add and edit 
 
 This API is a work in progress and we are calling on all community members to help build it out. Specifically we need language bindings/client libraries for [Javascript, Python, Java, Go, .NET, Node, Ruby]. We also want feature requests from the community, so we can unlock all the value of Grepper through this API.
 
-To get started here is a quick example of using the api key. Note: You will need a [grepper account](https://www.grepper.com), after creating an account you can find your [api key here](https://www.grepper.com/app/settings-account.php)
+Note: You will need a [grepper account](https://www.grepper.com), after creating an account you can find your [api key here](https://www.grepper.com/app/settings-account.php)
+
+You can hit the API endpoints directly or use one of our API client libraries:
+
+Language | Github Repo | Status | Notes
+-------- | ----------- | ------ | -------
+PHP      |(https://github.com/CodeGrepper/grepper-php)| In Progress  | Authors: [Taylor Hawkes](https://github.com/TaylorHawkes)
+Javascript|(https://github.com/CodeGrepper/grepper-javascript)| Need Contributors  | Authors: TBD
+Python|(https://github.com/CodeGrepper/grepper-python)| Need Contributors  | Authors: TBD
+Node|(https://github.com/CodeGrepper/grepper-node)| Need Contributors  | Authors: TBD
+Go|(https://github.com/CodeGrepper/grepper-go)| Need Contributors  | Authors: TBD
 
 
 <aside class="notice">
