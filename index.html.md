@@ -124,7 +124,7 @@ Remember — You'll need to swap out your_grepper_api_key_here for you api key.
 </aside>
 
 ## Retreive an Answer
-
+<aside class="warning">This endpoint is in progress and not yet available.</aside>
 
 ```shell
 curl https://api.grepper.com/v1/answers/560676 \
@@ -156,7 +156,7 @@ $answer=$stripe->answers->retrieve(560676);
 
 This endpoint retrieves a specific answer.
 
-<aside class="warning">This endpoint is in progress and not yet available.</aside>
+
 
 ### HTTP Request
 
@@ -169,6 +169,7 @@ Parameter | Description
 id | The answer id of the answer to retrieve
 
 ## Update a specific answer
+<aside class="warning">This endpoint is in progress and not yet available.</aside>
 
 ```php
 import kittn
