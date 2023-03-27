@@ -33,11 +33,11 @@ You can hit the API endpoints directly or use one of our API client libraries:
 
 Language | Github Repo | Status | Notes
 -------- | ----------- | ------ | -------
-PHP      |(https://github.com/CodeGrepper/grepper-php)| In Progress  | Authors: [Taylor Hawkes](https://github.com/TaylorHawkes)
-Javascript|(https://github.com/CodeGrepper/grepper-javascript)| Need Contributors  | Authors: TBD
-Python|(https://github.com/CodeGrepper/grepper-python)| Need Contributors  | Authors: TBD
-Node|(https://github.com/CodeGrepper/grepper-node)| Need Contributors  | Authors: TBD
-Go|(https://github.com/CodeGrepper/grepper-go)| Need Contributors  | Authors: TBD
+PHP      |[grepper-php](https://github.com/CodeGrepper/grepper-php)| In Progress  | Authors: [Taylor Hawkes](https://github.com/TaylorHawkes)
+Javascript|[grepper-javascript](https://github.com/CodeGrepper/grepper-javascript)| Need Contributors  | Authors: TBD
+Python|[grepper-python](https://github.com/CodeGrepper/grepper-python)| Need Contributors  | Authors: TBD
+Node|[grepper-node](https://github.com/CodeGrepper/grepper-node)| Need Contributors  | Authors: TBD
+Go|[grepper-go](https://github.com/CodeGrepper/grepper-go)| Need Contributors  | Authors: TBD
 
 
 <aside class="notice">
