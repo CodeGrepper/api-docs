@@ -14,6 +14,7 @@ Javascript|(https://github.com/CodeGrepper/grepper-javascript)| Need Contributor
 Python|(https://github.com/CodeGrepper/grepper-python)| Need Contributors  | Authors: TBD
 Node|(https://github.com/CodeGrepper/grepper-node)| Need Contributors  | Authors: TBD
 Go|(https://github.com/CodeGrepper/grepper-go)| Need Contributors  | Authors: TBD
+Rust      |(https://github.com/CodeGrepper/grepper-)| In Progress  | Authors: [Mahesh Pimparkar](https://github.com/maheshzip)
 
 
 
